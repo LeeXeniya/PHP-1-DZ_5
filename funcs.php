@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 function getUsersList() {
 
     return include ( __DIR__ . '/users.php') ;
@@ -28,5 +26,9 @@ function сheckPassword($login, $password) {
         }
 }
  function getCurrentUser() {
-    
+    if ( !empty($_SESSION['login']) && (true === existsUser($_SESSION['login']))) {
+        return $_SESSION['login'];
+    } else {
+        return NULL;
+    }
  }
