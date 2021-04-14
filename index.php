@@ -8,13 +8,17 @@ include __DIR__ . '/funcs.php';
 <h1>Главная страница</h1>
 
 <?php
-//echo password_hash('123', PASSWORD_DEFAULT);
-
-//var_dump(getUsersList()) ;
-//var_dump(existsUser('Petr1'));
-//var_dump(сheckPassword('Petr', '12345'));
-var_dump(сheckPassword('Vasya', '123'));
-//echo password_hash('12345', PASSWORD_DEFAULT);
 
 
+$list = scandir(__DIR__ . '/images');
+
+echo ('Добрый день, ' . getCurrentUser()) ;
+
+If (getCurrentUser() !== NULL) { ?>
+<form action="/upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="userfile">
+    <button type="submit">Загрузить</button>
+</form>
+<?php
+}
 

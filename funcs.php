@@ -16,7 +16,7 @@ function existsUser($login) {
     }
 }
 
-function сheckPassword($login, $password) {
+function checkPassword($login, $password) {
 
         $usersList = getUsersList();
         foreach($usersList as $index => $value) {
